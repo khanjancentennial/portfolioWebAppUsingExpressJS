@@ -15,7 +15,7 @@
                     <p>Social Media Accounts</p>
                     <a href=""> <i class="fab fa-instagram"></i></a>
                 </div> -->
-                
+
                 <!-- contact form where user can enter name and email with the message for further comunication which store in google sheet -->
 
             </div>
@@ -37,24 +37,55 @@
 <!-- script which add the form detail in the google sheet -->
 
 
-<script>
+<!-- <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbx3gahnui0_O33VWyXZF1exToRkC2mBE86FlmCnKVxbuQeJBN6QlzsPFbA5kET0aXyMpg/exec'
     const form = document.forms['submit-to-google-sheet']
-  
     form.addEventListener('submit', e => {
+  console.log(form.value);
+
+  let x = document.forms["Name"]["Email"].value;
+  if (x == "") {
+    
+        return false;
+  }else{
+    alert ("Message sebt successfully");
+    return true;
+  }
       e.preventDefault()
+
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     })
-  </script>
+  </script> -->
 
 <!-- redirect to the home page after submit the details -->
 
 <script type="text/javascript">
-   
-    function fun() {  
-        document.location='/';
-        alert ("Message sebt successfully");
+
+    function fun() {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx3gahnui0_O33VWyXZF1exToRkC2mBE86FlmCnKVxbuQeJBN6QlzsPFbA5kET0aXyMpg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        // console.log("no data in form",form);
+        form.addEventListener('submit', e => {
+            // console.log("no data",e);
+
+            if (e == "") {
+                console.log("no data added");
+            } else {
+                document.location = '/';
+                alert("Message sent successfully");
+                e.preventDefault()
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+            }
+         
+        });
+
+
+        // document.location='/';
+        // alert ("Message sebt successfully");
     }
 </script>
