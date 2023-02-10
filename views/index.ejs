@@ -1,9 +1,15 @@
+<!-- 
+  Enrollment Number :- 301307330
+  Name :- Khanjan Dave 
+-->
+
+<!-- include header with options in main page -->
 <%- include ('partials/header.ejs') %> 
 
- 
+ <!-- add navigation bar in header -->
 <%- include ('partials/main_nav.ejs') %> 
 
-
+<!-- redirect to the respective pages according to the title -->
 <% if (title == "Home") {%>
     <%- include ('home.ejs') %>
       <%} 
@@ -25,60 +31,8 @@
       <% } %>
 
 
-
+// include footer with coptyright content
 <%- include ('partials/footer_nav.ejs') %>
 
 
 <%- include ('partials/footer.ejs') %> 
-    
-
-
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khanjan Personal Portfolio</title>
-
-    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
-  <link rel='stylesheet' href='/@fortawesome/fortawesome-free/css/all.min.css' />
-
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-
-
-    // <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/khanjan-dave-high-resolution-color-logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-text">
-                <p>
-                    Mobile Application Developer
-                </p>
-                <h1>
-                    Hello, I'm <span>Khanjan</span> <br>From India
-                </h1>
-            </div>
-        </div>
-    </div>
-
-
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/javascripts/app.js"></script>
-
-
-</body>
-</html>-->
